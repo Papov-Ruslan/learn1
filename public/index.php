@@ -1,18 +1,10 @@
 <?php
-print_r($_POST);
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
-$mysql = mysqli_connect("localhost", "admin", "12345", "person_book");
 
-if ($mysql === false)
-{
-    die("Ошибка соединение с БД. - " . mysqli_connect());
-
-}
-
-$sql = "SELECT  `name`, `login`, `password` FROM `users` WHERE 1;";
-$queryResult = mysqli_query($mysql, $sql);
-
-$user = mysqli_fetch_all($queryResult, MYSQLI_ASSOC);
-echo '<pre>';
-print_r($user);
-echo '<pre>';
+include ('../system/system.php');
+include ('../app/controllers/users.php');
+include ('../app/controllers/products/products.php');
+print_r($_SERVER['DOCUMENT_ROOT'] . '/system/system.php');
