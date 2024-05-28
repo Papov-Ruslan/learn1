@@ -6,4 +6,3 @@ if ($mysql === false)
     die("Ошибка соединение с БД. - " . mysqli_connect_error());
 
 }
-
